@@ -7,23 +7,67 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F370D78253F71E600D354FE /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F370D76253F71E600D354FE /* Tweet.swift */; };
+		3F370D79253F71E600D354FE /* template.html in Resources */ = {isa = PBXBuildFile; fileRef = 3F370D77253F71E600D354FE /* template.html */; };
 		3F453105253CF48600E854A7 /* ThreaderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F453104253CF48600E854A7 /* ThreaderApp.swift */; };
 		3F453107253CF48600E854A7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F453106253CF48600E854A7 /* ContentView.swift */; };
 		3F453109253CF48900E854A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F453108253CF48900E854A7 /* Assets.xcassets */; };
 		3F45310C253CF48900E854A7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F45310B253CF48900E854A7 /* Preview Assets.xcassets */; };
+		3F45311B253CF4AB00E854A7 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F45311A253CF4AB00E854A7 /* ShareViewController.swift */; };
+		3F453122253CF4AB00E854A7 /* ThreaderShare.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3F453118253CF4AB00E854A7 /* ThreaderShare.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3F45313C253E761300E854A7 /* TwitterSettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F45313B253E761300E854A7 /* TwitterSettings.plist */; };
+		3F453140253E791200E854A7 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F45313F253E791200E854A7 /* Models.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		3F453120253CF4AB00E854A7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3F4530F9253CF48600E854A7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3F453117253CF4AB00E854A7;
+			remoteInfo = ThreaderShare;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3F453126253CF4AB00E854A7 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				3F453122253CF4AB00E854A7 /* ThreaderShare.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		3F370D76253F71E600D354FE /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
+		3F370D77253F71E600D354FE /* template.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = template.html; sourceTree = "<group>"; };
 		3F453101253CF48600E854A7 /* Threader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Threader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F453104253CF48600E854A7 /* ThreaderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreaderApp.swift; sourceTree = "<group>"; };
 		3F453106253CF48600E854A7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3F453108253CF48900E854A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F45310B253CF48900E854A7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3F45310D253CF48900E854A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F453118253CF4AB00E854A7 /* ThreaderShare.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ThreaderShare.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F45311A253CF4AB00E854A7 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		3F45311F253CF4AB00E854A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F45313B253E761300E854A7 /* TwitterSettings.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = TwitterSettings.plist; sourceTree = "<group>"; };
+		3F45313F253E791200E854A7 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		3F4530FE253CF48600E854A7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F453115253CF4AB00E854A7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -37,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				3F453103253CF48600E854A7 /* Threader */,
+				3F453119253CF4AB00E854A7 /* ThreaderShare */,
 				3F453102253CF48600E854A7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -45,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				3F453101253CF48600E854A7 /* Threader.app */,
+				3F453118253CF4AB00E854A7 /* ThreaderShare.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -69,6 +115,19 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		3F453119253CF4AB00E854A7 /* ThreaderShare */ = {
+			isa = PBXGroup;
+			children = (
+				3F370D77253F71E600D354FE /* template.html */,
+				3F370D76253F71E600D354FE /* Tweet.swift */,
+				3F45311A253CF4AB00E854A7 /* ShareViewController.swift */,
+				3F45311F253CF4AB00E854A7 /* Info.plist */,
+				3F45313B253E761300E854A7 /* TwitterSettings.plist */,
+				3F45313F253E791200E854A7 /* Models.swift */,
+			);
+			path = ThreaderShare;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -79,15 +138,34 @@
 				3F4530FD253CF48600E854A7 /* Sources */,
 				3F4530FE253CF48600E854A7 /* Frameworks */,
 				3F4530FF253CF48600E854A7 /* Resources */,
+				3F453126253CF4AB00E854A7 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				3F453121253CF4AB00E854A7 /* PBXTargetDependency */,
 			);
 			name = Threader;
 			productName = Threader;
 			productReference = 3F453101253CF48600E854A7 /* Threader.app */;
 			productType = "com.apple.product-type.application";
+		};
+		3F453117253CF4AB00E854A7 /* ThreaderShare */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F453123253CF4AB00E854A7 /* Build configuration list for PBXNativeTarget "ThreaderShare" */;
+			buildPhases = (
+				3F453114253CF4AB00E854A7 /* Sources */,
+				3F453115253CF4AB00E854A7 /* Frameworks */,
+				3F453116253CF4AB00E854A7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ThreaderShare;
+			productName = ThreaderShare;
+			productReference = 3F453118253CF4AB00E854A7 /* ThreaderShare.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -99,6 +177,9 @@
 				LastUpgradeCheck = 1220;
 				TargetAttributes = {
 					3F453100253CF48600E854A7 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					3F453117253CF4AB00E854A7 = {
 						CreatedOnToolsVersion = 12.2;
 					};
 				};
@@ -117,6 +198,7 @@
 			projectRoot = "";
 			targets = (
 				3F453100253CF48600E854A7 /* Threader */,
+				3F453117253CF4AB00E854A7 /* ThreaderShare */,
 			);
 		};
 /* End PBXProject section */
@@ -128,6 +210,15 @@
 			files = (
 				3F45310C253CF48900E854A7 /* Preview Assets.xcassets in Resources */,
 				3F453109253CF48900E854A7 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F453116253CF4AB00E854A7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F370D79253F71E600D354FE /* template.html in Resources */,
+				3F45313C253E761300E854A7 /* TwitterSettings.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,7 +234,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3F453114253CF4AB00E854A7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F370D78253F71E600D354FE /* Tweet.swift in Sources */,
+				3F453140253E791200E854A7 /* Models.swift in Sources */,
+				3F45311B253CF4AB00E854A7 /* ShareViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3F453121253CF4AB00E854A7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3F453117253CF4AB00E854A7 /* ThreaderShare */;
+			targetProxy = 3F453120253CF4AB00E854A7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		3F45310E253CF48900E854A7 /* Debug */ = {
@@ -197,7 +306,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -252,7 +361,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -265,6 +374,7 @@
 		3F453111253CF48900E854A7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +397,7 @@
 		3F453112253CF48900E854A7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -301,6 +412,46 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.iamdaniele.Threader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3F453124253CF4AB00E854A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = THX3Z8FLEN;
+				INFOPLIST_FILE = ThreaderShare/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.iamdaniele.Threader.ThreaderShare;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3F453125253CF4AB00E854A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = THX3Z8FLEN;
+				INFOPLIST_FILE = ThreaderShare/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.iamdaniele.Threader.ThreaderShare;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -323,6 +474,15 @@
 			buildConfigurations = (
 				3F453111253CF48900E854A7 /* Debug */,
 				3F453112253CF48900E854A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3F453123253CF4AB00E854A7 /* Build configuration list for PBXNativeTarget "ThreaderShare" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F453124253CF4AB00E854A7 /* Debug */,
+				3F453125253CF4AB00E854A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "15042D2B-CC59-4B85-9FFB-EFCB58EBA0E6"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A4BA1D0F-3766-4EE5-9A19-025F91515C6F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../thread/threadshare/Tweet.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
+            landmarkName = "thread(tweet:completionBlock:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FD53B30D-8C34-4AC5-8E4E-6D5718145A78"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ThreaderShare/ShareViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "176"
+            endingLineNumber = "176"
+            landmarkName = "findThread(tweetURL:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6B8749F8-5E66-444C-BE9D-B8525F69263E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ThreaderShare/ShareViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
+            landmarkName = "renderPoll(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6B8749F8-5E66-444C-BE9D-B8525F69263E - 7bf3f95e6d47bc5c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ThreaderShare.ShareViewController.renderPoll(ThreaderShare.Poll) -&gt; Swift.String"
+                  moduleName = "ThreaderShare"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dbernardi/Library/Autosave%20Information/Threader/ThreaderShare/ShareViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "139"
+                  endingLineNumber = "139"
+                  offsetFromSymbolStart = "622">
+               </Location>
+               <Location
+                  uuid = "6B8749F8-5E66-444C-BE9D-B8525F69263E - 638feb64c1e13700"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 (ThreaderShare.PollOption) -&gt; Swift.Int in ThreaderShare.ShareViewController.renderPoll(ThreaderShare.Poll) -&gt; Swift.String"
+                  moduleName = "ThreaderShare"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dbernardi/Library/Autosave%20Information/Threader/ThreaderShare/ShareViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "139"
+                  endingLineNumber = "139"
+                  offsetFromSymbolStart = "31">
+               </Location>
+               <Location
+                  uuid = "6B8749F8-5E66-444C-BE9D-B8525F69263E - 2e422c5430b5313d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "implicit closure #2 (Swift.Int, Swift.Int) -&gt; Swift.Int in implicit closure #1 (Swift.Int.Type) -&gt; (Swift.Int, Swift.Int) -&gt; Swift.Int in ThreaderShare.ShareViewController.renderPoll(ThreaderShare.Poll) -&gt; Swift.String"
+                  moduleName = "ThreaderShare"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dbernardi/Library/Autosave%20Information/Threader/ThreaderShare/ShareViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "139"
+                  endingLineNumber = "139"
+                  offsetFromSymbolStart = "82">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

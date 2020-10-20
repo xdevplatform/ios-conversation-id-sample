@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="twitter:widgets:theme" content="light">
+  <meta name="twitter:widgets:cards" content="hidden">
+  <meta name="twitter:widgets:align" content="center">
+  <meta name="twitter:widgets:dnt" content="true">
+  <meta name="twitter:widgets:conversation" content="none">
+  <title>Thread</title>
+  <style>
+    html {
+      font-family: -apple-system;
+      word-wrap: break-word;
+    }
+
+    body { margin: 0 }
+    
+    article {
+      font-size: 1.2rem;
+      margin: 1rem;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+    
+    a {
+      color: #1b95e0;
+    }
+
+    header, article.flex {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+    }
+    
+    header {
+      color: #888;
+      background-color: #f3f2f3;
+      border-bottom: 1px solid #eee;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+
+    header img {
+      padding: 0.5rem;
+      border-radius: 50%;      
+    }
+
+    div.grow {
+      flex-grow: 2;
+    }
+
+    header div.grow p {
+      font-size: 0.75rem;
+      margin: 0.25rem 0;
+    }
+
+    header b {
+      color: #000;
+    }
+
+    progress {
+      border-radius: 0.3rem; 
+      width: 100%;
+      height: 2rem;
+    }
+
+    progress::-webkit-progress-bar {
+      background: transparent;
+    }
+
+    progress::-webkit-progress-value {
+      background: #ccd6dd;
+      border-radius: 0.3rem;
+    }
+    
+    article.flex.win progress::-webkit-progress-value {
+      background: #71c9f8;
+      border-radius: 0.3rem;
+    }
+
+    article.flex {
+      font-size: 1rem;
+      margin: 0.5rem;
+    }
+
+    article.flex label {
+      display: block;
+      line-height: 2rem;
+      position: relative;
+      top: 2rem;
+      margin-top: -2rem;
+      margin-left: 0.5rem;
+      margin-right: 0.5rem; 
+    }
+
+    article.flex.win label,
+    article.flex.win div {
+      font-weight: bold;
+    }
+
+    
+    @media (prefers-color-scheme: dark) {
+      html {
+        background: #000;
+        color: #ddd;
+      }
+
+      header {
+        color: #888;
+        background-color: #222;
+        border-bottom: 1px solid #444;
+      }
+
+      header b {
+        color: #ddd;
+      }
+
+      progress::-webkit-progress-value {
+        background: #2f3336;
+        border-radius: 0.3rem;
+      }
+
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div><img src="{{PROFILE_IMAGE_URL}}" /></div>
+    <div class="grow">
+      <p><b>{{NAME}}</b> @{{USERNAME}}</p>
+      <p>{{TWEET_CREATED_AT}}</p>
+    </div>
+  </header>
+  <article>{{CONTENT}}</article>
+
+<script>
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.querySelector('meta[name="twitter:widgets:theme"]').setAttribute('content', 'dark');
+    }
+  </script>
+  <script id="twitter-wjs" type="text/javascript" async defer src="https://platform.twitter.com/widgets.js"></script>
+</body>
+</html>
