@@ -22,8 +22,9 @@ extension Tweet {
 }
 
 extension TweetLookupResponse {
-  func conversationHead() -> Tweet? {
+  var conversationHead: Tweet? {
     return data?.first { $0.id == $0.conversationId }
+      ?? includes?.tweets?.first { $0.id == $0.conversationId }
   }
   
   func user(of tweet: Tweet) -> User? {

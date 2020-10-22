@@ -14,7 +14,8 @@ enum TwitterRequestError: Error {
   case missingBearerToken
   case requestFailed
   case conversationNotFound
-  case oldTweet
+  case tweetTooOld
+  case tweetNotFound
   case unknown
 }
 
@@ -40,14 +41,16 @@ class Twitter {
     return try decoder.decode(T.self, from: json)
   }
   
-  static func request(url: URL) -> Result<TweetLookupResponse?, TwitterRequestError> {
+  static func request(url: URL, cached: Bool = true) -> Result<TweetLookupResponse?, TwitterRequestError> {
     var result: Result<TweetLookupResponse?, TwitterRequestError>!
     
-    guard let bearerToken = Twitter.getBearerToken() else {
+    guard let bearerToken = Twitter.getBearerToken(),
+          !bearerToken.isEmpty else {
       return .failure(.missingBearerToken)
     }
         
-    if let data = FileCache.read(url),
+    if cached,
+       let data = FileCache.read(url),
        let body: TweetLookupResponse = try? Twitter.decode(data) {
       result = .success(body)
       return result
@@ -60,7 +63,10 @@ class Twitter {
     URLSession.shared.dataTask(with: request) { (data, _, _) in
       if let data = data,
          let body: TweetLookupResponse = try? Twitter.decode(data) {
-        FileCache.write(url, data: data)
+        if cached {
+          FileCache.write(url, data: data)
+        }
+
         result = .success(body)
       } else {
         result = .failure(.requestFailed)

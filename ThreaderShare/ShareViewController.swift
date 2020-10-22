@@ -164,27 +164,35 @@ class ShareViewController: UIViewController, WKNavigationDelegate {
     return body.joined()
   }
   
+  func showError(for error: TwitterRequestError) -> Void {
+    switch error {
+    case .tweetNotFound:
+      self.alert(title: "Tweet not found", message: "Could not get a valid Tweet.")
+
+    case .conversationNotFound:
+      self.alert(title: "Thread not found", message: "This Tweet does not belong to a thread, or the thread is older than seven days.")
+
+    case .missingBearerToken:
+      self.alert(title: "Missing Bearer token", message: "Your Bearer token is missing. Add your Bearer token in TwitterSettings.plist and build this project again.")
+
+    case .tweetTooOld:
+      self.alert(title: "Invalid tweet", message: "This is not a valid Twitter thread, or the thread is older than seven days.")
+      
+    case .requestFailed:
+      self.alert(title: "Uh oh", message: "The network request feiled.")
+      
+    case .unknown:
+      self.alert(title: "Technical difficulties", message: "Something wrong happened. Try again later.")
+    }
+  }
+  
   func findThread(tweetURL: URL) {
     let tweetId = getId(tweetURL: tweetURL)
-
-    Tweet.thread(id: tweetId) { (response, error) in
+    
+    let conversation = Conversation(of: tweetId)
+    conversation.thread { (response, error) in
       if let error = error {
-        switch error {
-        case .conversationNotFound:
-          self.alert(title: "Thread not found", message: "This Tweet does not belong to a thread, or the thread is older than seven days.")
-
-        case .missingBearerToken:
-          self.alert(title: "Missing Bearer token", message: "Your Bearer token is missing. Add your Bearer token in TwitterSettings.plist and build this project again.")
-
-        case .oldTweet:
-          self.alert(title: "Invalid tweet", message: "This is not a valid Twitter thread, or the thread is older than seven days.")
-          
-        case .requestFailed:
-          self.alert(title: "Uh oh", message: "The network request feiled.")
-          
-        case .unknown:
-          self.alert(title: "Technical difficulties", message: "Something wrong happened. Try again later.")
-        }
+        self.showError(for: error)
         return
       }
       
@@ -195,12 +203,7 @@ class ShareViewController: UIViewController, WKNavigationDelegate {
       }
       
       var paragraphs = [String]()
-      var conversationHead: Tweet?
       for tweetOfThread in thread {
-        if tweetOfThread.id == tweetOfThread.conversationId {
-          conversationHead = tweetOfThread
-        }
-        
         paragraphs.append("<p>\(self.removeLinksFromText(tweet: tweetOfThread))</p>")
 
         if let poll = response.poll(tweet: tweetOfThread) {
@@ -223,7 +226,7 @@ class ShareViewController: UIViewController, WKNavigationDelegate {
       let body = paragraphs.joined()
       if let bundleURL = Bundle.main.url(forResource: "template", withExtension: "html"),
          let template = try? String(contentsOf: bundleURL),
-         let conversationHead = conversationHead,
+         let conversationHead = response.conversationHead,
          let user = response.user(of: conversationHead) {
         
         var html = template.replacingOccurrences(of: "{{CONTENT}}", with: body)

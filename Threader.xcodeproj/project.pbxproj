@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3F370D78253F71E600D354FE /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F370D76253F71E600D354FE /* Tweet.swift */; };
+		3F370D78253F71E600D354FE /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F370D76253F71E600D354FE /* Conversation.swift */; };
 		3F370D79253F71E600D354FE /* template.html in Resources */ = {isa = PBXBuildFile; fileRef = 3F370D77253F71E600D354FE /* template.html */; };
 		3F453105253CF48600E854A7 /* ThreaderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F453104253CF48600E854A7 /* ThreaderApp.swift */; };
 		3F453107253CF48600E854A7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F453106253CF48600E854A7 /* ContentView.swift */; };
@@ -47,7 +47,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3F370D76253F71E600D354FE /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
+		3F370D76253F71E600D354FE /* Conversation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
 		3F370D77253F71E600D354FE /* template.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = template.html; sourceTree = "<group>"; };
 		3F453101253CF48600E854A7 /* Threader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Threader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F453104253CF48600E854A7 /* ThreaderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreaderApp.swift; sourceTree = "<group>"; };
@@ -125,7 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				3F370D77253F71E600D354FE /* template.html */,
-				3F370D76253F71E600D354FE /* Tweet.swift */,
+				3F370D76253F71E600D354FE /* Conversation.swift */,
 				3F45311A253CF4AB00E854A7 /* ShareViewController.swift */,
 				3F45311F253CF4AB00E854A7 /* Info.plist */,
 				3F45313B253E761300E854A7 /* TwitterSettings.plist */,
@@ -248,7 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F6E61C2254147860080DA47 /* Models+Extension.swift in Sources */,
-				3F370D78253F71E600D354FE /* Tweet.swift in Sources */,
+				3F370D78253F71E600D354FE /* Conversation.swift in Sources */,
 				3F453140253E791200E854A7 /* Models.swift in Sources */,
 				3F6E61BE2541328D0080DA47 /* FileCache.swift in Sources */,
 				3F45311B253CF4AB00E854A7 /* ShareViewController.swift in Sources */,

@@ -7,12 +7,6 @@
 
 import Foundation
 
-struct SingleTweetResponse : Codable {
-  var data: Tweet?
-  var includes: Includes?
-}
-
-
 struct TweetLookupResponse : Codable {
   struct Meta : Codable {
     var resultCount: Int
