@@ -64,7 +64,7 @@ class ShareViewController: UIViewController, WKNavigationDelegate {
              self.validateTweetURL(url: shareURL) != nil {
             self.findThread(tweetURL: shareURL)
           } else {
-            let alert = UIAlertController(title: "Invalid thread", message: "This is not a valid Twitter thread, or the thread is older than seven days.", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Invalid thread or URL", message: "This is not a valid Twitter thread, or the thread is older than seven days.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Close", style: .cancel, handler: { (UIAlertAction) in
               self.cancel()
             }))
@@ -166,94 +166,84 @@ class ShareViewController: UIViewController, WKNavigationDelegate {
   
   func findThread(tweetURL: URL) {
     let tweetId = getId(tweetURL: tweetURL)
-    Tweet.tweet(id: tweetId) { (tweet, response, error) in
-      if error != nil,
-         error as? TwitterRequestError == .missingBearerToken {
-        self.alert(title: "Missing Bearer token", message: "Your Bearer token is missing. Add your Bearer token in TwitterSettings.plist and build this project again.")
-        return
-      }
-      
-      guard let tweet = tweet,
-            let singleResponse = response else {
-        self.alert(title: "Invalid tweet", message: "This is not a valid Twitter thread, or the thread is older than seven days.")
-        
-        return
-      }
-      
-      if tweet.isOlderThanSevenDays {
-        self.alert(title: "Thread too old", message: "The recent search endpoint can only return conversations tweeted in the past 7 days.")
 
-        return
-      }
-      
-      Tweet.thread(tweet: tweet, completionBlock: { (thread, searchResponse, error) in
-        if error != nil,
-           error as? TwitterRequestError == .missingBearerToken {
+    Tweet.thread(id: tweetId) { (response, error) in
+      if let error = error {
+        switch error {
+        case .conversationNotFound:
+          self.alert(title: "Thread not found", message: "This Tweet does not belong to a thread, or the thread is older than seven days.")
+
+        case .missingBearerToken:
           self.alert(title: "Missing Bearer token", message: "Your Bearer token is missing. Add your Bearer token in TwitterSettings.plist and build this project again.")
-          return
-        }
 
-        var paragraphs = [String]()
-        guard let thread = thread,
-              let searchResponse = searchResponse else {
-          let alert = UIAlertController(title: "Invalid thread", message: "This is not a valid Twitter thread, or the thread is older than seven days.", preferredStyle: .alert)
-          alert.addAction(UIAlertAction(title: "Close", style: .cancel, handler: { (UIAlertAction) in
-            self.cancel()
-          }))
+        case .oldTweet:
+          self.alert(title: "Invalid tweet", message: "This is not a valid Twitter thread, or the thread is older than seven days.")
           
-          DispatchQueue.main.async {
-            self.present(alert, animated: true)
-          }
+        case .requestFailed:
+          self.alert(title: "Uh oh", message: "The network request feiled.")
           
-          return
+        case .unknown:
+          self.alert(title: "Technical difficulties", message: "Something wrong happened. Try again later.")
+        }
+        return
+      }
+      
+      guard let response = response,
+            let thread = response.data else {
+        self.alert(title: "No thread", message: "Twitter did not return a thread. Try again later.")
+        return
+      }
+      
+      var paragraphs = [String]()
+      var conversationHead: Tweet?
+      for tweetOfThread in thread {
+        if tweetOfThread.id == tweetOfThread.conversationId {
+          conversationHead = tweetOfThread
         }
         
-        for tweetOfThread in thread {
-          paragraphs.append("<p>\(self.removeLinksFromText(tweet: tweetOfThread))</p>")
+        paragraphs.append("<p>\(self.removeLinksFromText(tweet: tweetOfThread))</p>")
 
-          if let poll = searchResponse.poll(tweet: tweetOfThread) {
-            paragraphs.append(self.renderPoll(poll))
-          }
+        if let poll = response.poll(tweet: tweetOfThread) {
+          paragraphs.append(self.renderPoll(poll))
+        }
 
-          if let media = searchResponse.media(tweet: tweetOfThread) {
-            for mediaItem in media {
-              if let urlString = mediaItem.type == .photo ? mediaItem.url : mediaItem.previewImageUrl {
-                paragraphs.append("<p><img src=\"\(urlString)\"/></p>")
-              }
+        if let media = response.media(tweet: tweetOfThread) {
+          for mediaItem in media {
+            if let urlString = mediaItem.type == .photo ? mediaItem.url : mediaItem.previewImageUrl {
+              paragraphs.append("<p><img src=\"\(urlString)\"/></p>")
             }
           }
-          
-          if let quotedTweet = tweetOfThread.referenceURL(type: .quoted) {
-            paragraphs.append("<blockquote class=\"twitter-tweet\" data-conversation=\"none\"><a href=\"\(quotedTweet.absoluteString)\"></a></blockquote>")
-          }
         }
         
-        let body = paragraphs.joined()
-        if let bundleURL = Bundle.main.url(forResource: "template", withExtension: "html"),
-           let template = try? String(contentsOf: bundleURL),
-           let user = singleResponse.user() {
-          
-          var html = template.replacingOccurrences(of: "{{CONTENT}}", with: body)
-          html = html.replacingOccurrences(of: "{{PROFILE_IMAGE_URL}}", with: user.profileImageUrl)
-          html = html.replacingOccurrences(of: "{{NAME}}", with: user.name)
-          html = html.replacingOccurrences(of: "{{USERNAME}}", with: user.username)
-          html = html.replacingOccurrences(of: "{{TWEET_CREATED_AT}}", with: self.formatTweetCreationDate(tweet: tweet))
-          self.webView.loadHTMLString(html, baseURL: nil)
-        } else {
-          let alert = UIAlertController(title: "Cannot get thread", message: "The operation could not be completed. Try again later.", preferredStyle: .alert)
-          alert.addAction(UIAlertAction(title: "Close", style: .cancel, handler: { (UIAlertAction) in
-            self.cancel()
-          }))
-          
-          DispatchQueue.main.async {
-            self.present(alert, animated: true)
-          }
-          
+        if let quotedTweet = tweetOfThread.referenceURL(type: .quoted) {
+          paragraphs.append("<blockquote class=\"twitter-tweet\" data-conversation=\"none\"><a href=\"\(quotedTweet.absoluteString)\"></a></blockquote>")
+        }
+      }
+      
+      let body = paragraphs.joined()
+      if let bundleURL = Bundle.main.url(forResource: "template", withExtension: "html"),
+         let template = try? String(contentsOf: bundleURL),
+         let conversationHead = conversationHead,
+         let user = response.user(of: conversationHead) {
+        
+        var html = template.replacingOccurrences(of: "{{CONTENT}}", with: body)
+        html = html.replacingOccurrences(of: "{{PROFILE_IMAGE_URL}}", with: user.profileImageUrl)
+        html = html.replacingOccurrences(of: "{{NAME}}", with: user.name)
+        html = html.replacingOccurrences(of: "{{USERNAME}}", with: user.username)
+        html = html.replacingOccurrences(of: "{{TWEET_CREATED_AT}}", with: self.formatTweetCreationDate(tweet: conversationHead))
+        self.webView.loadHTMLString(html, baseURL: nil)
+      } else {
+        let alert = UIAlertController(title: "Cannot get thread", message: "The operation could not be completed. Try again later.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Close", style: .cancel, handler: { (UIAlertAction) in
+          self.cancel()
+        }))
+        
+        DispatchQueue.main.async {
+          self.present(alert, animated: true)
         }
         
-      })
+      }
     }
-    
   }
   
   @objc func cancel() {

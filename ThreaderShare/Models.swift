@@ -13,7 +13,7 @@ struct SingleTweetResponse : Codable {
 }
 
 
-struct TweetSearchResponse : Codable {
+struct TweetLookupResponse : Codable {
   struct Meta : Codable {
     var resultCount: Int
     var newestId: String
