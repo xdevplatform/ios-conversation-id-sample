@@ -102,24 +102,21 @@ class ShareViewController: UIViewController, WKNavigationDelegate {
     return formatter.string(from: tweet.createdAt)
   }
   
-  func removeLinksFromText(tweet: Tweet) -> String {
+  func formatTweetText(tweet: Tweet) -> String {
     var text = tweet.text
-    if let entities = tweet.entities,
-       let urls = entities.urls {
-      let displayUrls = urls.filter({ (url) in
-       let pattern = #"(?:https:\/\/(?:.*\.)?twitter.com\/[\w\d_]+\/status\/)(\d{1,19})(\/photo|video)?(\/\d)?"#
-
-        return url.expandedUrl.range(of: pattern, options: .regularExpression) != nil
-      })
-      
-      for url in displayUrls {
-        text = text.replacingOccurrences(of: url.url, with: "")
+    if let urls = tweet.entities?.urls {
+      for url in urls {
+        if url.expandedUrl.range(of: #"(?:https:\/\/(?:.*\.)?twitter.com\/[\w\d_]+\/status\/)(\d{1,19})(\/photo|video)?(\/\d)?"#, options: .regularExpression) != nil {
+          text = text.replacingOccurrences(of: url.url, with: "")
+        } else {
+          text = text.replacingOccurrences(of: url.url, with: url.displayUrl)
+        }
       }
-      
-      return text.trimmingCharacters(in: .whitespacesAndNewlines)
     }
     
     return text
+      .replacingOccurrences(of: "\n", with: "<br>")
+      .trimmingCharacters(in: .whitespacesAndNewlines)
   }
   
   func alert(title: String, message: String) {
@@ -204,7 +201,7 @@ class ShareViewController: UIViewController, WKNavigationDelegate {
       
       var paragraphs = [String]()
       for tweetOfThread in thread {
-        paragraphs.append("<p>\(self.removeLinksFromText(tweet: tweetOfThread))</p>")
+        paragraphs.append("<p>\(self.formatTweetText(tweet: tweetOfThread))</p>")
 
         if let poll = response.poll(tweet: tweetOfThread) {
           paragraphs.append(self.renderPoll(poll))
