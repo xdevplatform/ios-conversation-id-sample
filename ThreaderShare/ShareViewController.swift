@@ -109,7 +109,7 @@ class ShareViewController: UIViewController, WKNavigationDelegate {
         if url.expandedUrl.range(of: #"(?:https:\/\/(?:.*\.)?twitter.com\/[\w\d_]+\/status\/)(\d{1,19})(\/photo|video)?(\/\d)?"#, options: .regularExpression) != nil {
           text = text.replacingOccurrences(of: url.url, with: "")
         } else {
-          text = text.replacingOccurrences(of: url.url, with: url.displayUrl)
+          text = text.replacingOccurrences(of: url.url, with: "<a target=\"_blank\" href=\"\(url.url)\">\(url.displayUrl)</a>")
         }
       }
     }
