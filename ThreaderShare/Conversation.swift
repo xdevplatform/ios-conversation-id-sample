@@ -43,8 +43,7 @@ class Conversation {
 
         // Get the conversation ID from the selected tweet
         .flatMap { (response) -> Result<TweetLookupResponse?, TwitterRequestError> in
-          guard let response = response,
-                let tweet = response.data?.first else {
+          guard let tweet = response?.data?.first else {
             return .failure(.tweetNotFound)
           }
           
@@ -59,8 +58,7 @@ class Conversation {
         
         // Check that the conversation is recent
         .flatMap { (response) -> Result<TweetLookupResponse?, TwitterRequestError> in
-          guard let response = response,
-                let tweet = response.data?.first else {
+          guard let tweet = response?.data?.first else {
             return .failure(.conversationNotFound)
           }
           
@@ -70,7 +68,6 @@ class Conversation {
           }
           
           return .success(response)
-
         }
         
         // Get the entire thread using recent search
@@ -87,18 +84,14 @@ class Conversation {
         // Since we're caching the search response, this is useful to check that
         // each tweet in the thread still exists.
         .flatMap { (response) -> Result<TweetLookupResponse?, TwitterRequestError> in
-          var result: Result<TweetLookupResponse?, TwitterRequestError>!
-          
           var url = self.requestURL(path: "/2/tweets")
-          if let response = response,
-             let data = response.data {
+          if let data = response?.data {
             var ids = data.map { $0.id }
             ids.append(self.conversationHead.id)
             url.queryItems?.append(URLQueryItem(name: "ids", value: ids.joined(separator: ",")))
             return Twitter.request(url: url.url!, cached: false)
           } else {
-            result = .failure(.unknown)
-            return result
+            return .failure(.unknown)
           }
         }
         
@@ -113,7 +106,7 @@ class Conversation {
             }
               
           case let .failure(error):
-              completionBlock(nil, error)
+            completionBlock(nil, error)
         }
       }
     }
