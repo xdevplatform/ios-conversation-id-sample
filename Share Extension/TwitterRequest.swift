@@ -1,6 +1,6 @@
 //
 //  TwitterRequest.swift
-//  ThreaderShare
+//  ConversationSampleShare
 //
 //  Created by Daniele Bernardi on 10/21/20.
 //
@@ -52,18 +52,17 @@ class Twitter {
     if cached,
        let data = FileCache.read(url),
        let body: TweetLookupResponse = try? Twitter.decode(data) {
-      result = .success(body)
-      return result
+      return .success(body)
     }
 
     let semaphore = DispatchSemaphore(value: 0)
     var request = URLRequest(url: url)
     request.addValue("Bearer \(bearerToken)", forHTTPHeaderField: "Authorization")
 
-    URLSession.shared.dataTask(with: request) { (data, _, _) in
+    URLSession.shared.dataTask(with: request) { (data, _, error) in
       if let data = data,
          let body: TweetLookupResponse = try? Twitter.decode(data) {
-        if cached {
+        if cached, error == nil {
           FileCache.write(url, data: data)
         }
 

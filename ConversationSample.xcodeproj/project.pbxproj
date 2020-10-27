@@ -7,19 +7,42 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F29847F2543AE0500AF13D1 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F45311A253CF4AB00E854A7 /* ShareViewController.swift */; };
+		3F2984822543AE4700AF13D1 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F45313F253E791200E854A7 /* Models.swift */; };
+		3F2984852543AE4A00AF13D1 /* Models+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6E61C1254147860080DA47 /* Models+Extension.swift */; };
+		3F2984882543AE4C00AF13D1 /* FileCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6E61BD2541328D0080DA47 /* FileCache.swift */; };
+		3F29848B2543AE4F00AF13D1 /* TwitterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6E61C5254148A70080DA47 /* TwitterRequest.swift */; };
+		3F2984912543AE5C00AF13D1 /* TwitterSettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F45313B253E761300E854A7 /* TwitterSettings.plist */; };
+		3F2984942543AE6A00AF13D1 /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F370D76253F71E600D354FE /* Conversation.swift */; };
+		3F29849E2543D77200AF13D1 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F29849D2543D77200AF13D1 /* MockData.swift */; };
+		3F2984A42543D91400AF13D1 /* ThreadHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2984A32543D91400AF13D1 /* ThreadHeader.swift */; };
 		3F370D78253F71E600D354FE /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F370D76253F71E600D354FE /* Conversation.swift */; };
-		3F370D79253F71E600D354FE /* template.html in Resources */ = {isa = PBXBuildFile; fileRef = 3F370D77253F71E600D354FE /* template.html */; };
-		3F453105253CF48600E854A7 /* ThreaderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F453104253CF48600E854A7 /* ThreaderApp.swift */; };
-		3F453107253CF48600E854A7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F453106253CF48600E854A7 /* ContentView.swift */; };
+		3F453105253CF48600E854A7 /* ConversationSampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F453104253CF48600E854A7 /* ConversationSampleApp.swift */; };
 		3F453109253CF48900E854A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F453108253CF48900E854A7 /* Assets.xcassets */; };
 		3F45310C253CF48900E854A7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F45310B253CF48900E854A7 /* Preview Assets.xcassets */; };
 		3F45311B253CF4AB00E854A7 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F45311A253CF4AB00E854A7 /* ShareViewController.swift */; };
-		3F453122253CF4AB00E854A7 /* ThreaderShare.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3F453118253CF4AB00E854A7 /* ThreaderShare.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3F453122253CF4AB00E854A7 /* ConversationSampleShare.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3F453118253CF4AB00E854A7 /* ConversationSampleShare.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		3F45313C253E761300E854A7 /* TwitterSettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F45313B253E761300E854A7 /* TwitterSettings.plist */; };
 		3F453140253E791200E854A7 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F45313F253E791200E854A7 /* Models.swift */; };
 		3F6E61BE2541328D0080DA47 /* FileCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6E61BD2541328D0080DA47 /* FileCache.swift */; };
 		3F6E61C2254147860080DA47 /* Models+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6E61C1254147860080DA47 /* Models+Extension.swift */; };
 		3F6E61C6254148A70080DA47 /* TwitterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6E61C5254148A70080DA47 /* TwitterRequest.swift */; };
+		3F8BCF3F2543F63F00376EA9 /* ConversationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8BCF3E2543F63F00376EA9 /* ConversationView.swift */; };
+		3F8BCF472544F4A000376EA9 /* TweetEmbed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8BCF462544F4A000376EA9 /* TweetEmbed.swift */; };
+		3FD2DC5025488E7600F5E5E5 /* TweetEmbed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8BCF462544F4A000376EA9 /* TweetEmbed.swift */; };
+		3FD2DC552548902B00F5E5E5 /* ConversationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8BCF3E2543F63F00376EA9 /* ConversationView.swift */; };
+		3FD2DC592548A20100F5E5E5 /* UserImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD2DC582548A20100F5E5E5 /* UserImage.swift */; };
+		3FD2DC5A2548A20100F5E5E5 /* UserImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD2DC582548A20100F5E5E5 /* UserImage.swift */; };
+		3FE373762547CAD600BEA12E /* TweetImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE373752547CAD600BEA12E /* TweetImage.swift */; };
+		3FE373772547CAD600BEA12E /* TweetImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE373752547CAD600BEA12E /* TweetImage.swift */; };
+		3FE3737C2547CBCA00BEA12E /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F29849D2543D77200AF13D1 /* MockData.swift */; };
+		3FE373802547CCE600BEA12E /* TweetImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE3737F2547CCE600BEA12E /* TweetImages.swift */; };
+		3FE373812547CCE600BEA12E /* TweetImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE3737F2547CCE600BEA12E /* TweetImages.swift */; };
+		3FE373852547E18500BEA12E /* TweetPollOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE373842547E18500BEA12E /* TweetPollOption.swift */; };
+		3FE373862547E18500BEA12E /* TweetPollOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE373842547E18500BEA12E /* TweetPollOption.swift */; };
+		3FE373902547ED0E00BEA12E /* TweetPoll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE3738F2547ED0E00BEA12E /* TweetPoll.swift */; };
+		3FE373912547ED0E00BEA12E /* TweetPoll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE3738F2547ED0E00BEA12E /* TweetPoll.swift */; };
+		3FF916252548A61900BED7C3 /* ThreadHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2984A32543D91400AF13D1 /* ThreadHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +62,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				3F453122253CF4AB00E854A7 /* ThreaderShare.appex in Embed App Extensions */,
+				3F453122253CF4AB00E854A7 /* ConversationSampleShare.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -47,15 +70,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3F29849D2543D77200AF13D1 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
+		3F2984A32543D91400AF13D1 /* ThreadHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadHeader.swift; sourceTree = "<group>"; };
 		3F370D76253F71E600D354FE /* Conversation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
-		3F370D77253F71E600D354FE /* template.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = template.html; sourceTree = "<group>"; };
-		3F453101253CF48600E854A7 /* Threader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Threader.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		3F453104253CF48600E854A7 /* ThreaderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreaderApp.swift; sourceTree = "<group>"; };
-		3F453106253CF48600E854A7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3F453101253CF48600E854A7 /* ConversationSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConversationSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F453104253CF48600E854A7 /* ConversationSampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationSampleApp.swift; sourceTree = "<group>"; };
 		3F453108253CF48900E854A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F45310B253CF48900E854A7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3F45310D253CF48900E854A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3F453118253CF4AB00E854A7 /* ThreaderShare.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ThreaderShare.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F453118253CF4AB00E854A7 /* ConversationSampleShare.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ConversationSampleShare.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F45311A253CF4AB00E854A7 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		3F45311F253CF4AB00E854A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F45313B253E761300E854A7 /* TwitterSettings.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = TwitterSettings.plist; sourceTree = "<group>"; };
@@ -63,6 +86,13 @@
 		3F6E61BD2541328D0080DA47 /* FileCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileCache.swift; sourceTree = "<group>"; };
 		3F6E61C1254147860080DA47 /* Models+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Models+Extension.swift"; sourceTree = "<group>"; };
 		3F6E61C5254148A70080DA47 /* TwitterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterRequest.swift; sourceTree = "<group>"; };
+		3F8BCF3E2543F63F00376EA9 /* ConversationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ConversationView.swift; path = ConversationSample/ConversationView.swift; sourceTree = SOURCE_ROOT; };
+		3F8BCF462544F4A000376EA9 /* TweetEmbed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetEmbed.swift; sourceTree = "<group>"; };
+		3FD2DC582548A20100F5E5E5 /* UserImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserImage.swift; sourceTree = "<group>"; };
+		3FE373752547CAD600BEA12E /* TweetImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetImage.swift; sourceTree = "<group>"; };
+		3FE3737F2547CCE600BEA12E /* TweetImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetImages.swift; sourceTree = "<group>"; };
+		3FE373842547E18500BEA12E /* TweetPollOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetPollOption.swift; sourceTree = "<group>"; };
+		3FE3738F2547ED0E00BEA12E /* TweetPoll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetPoll.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,8 +116,9 @@
 		3F4530F8253CF48600E854A7 = {
 			isa = PBXGroup;
 			children = (
-				3F453103253CF48600E854A7 /* Threader */,
-				3F453119253CF4AB00E854A7 /* ThreaderShare */,
+				3F453103253CF48600E854A7 /* ConversationSample */,
+				3F45310A253CF48900E854A7 /* Preview Content */,
+				3F453119253CF4AB00E854A7 /* Share Extension */,
 				3F453102253CF48600E854A7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -95,22 +126,23 @@
 		3F453102253CF48600E854A7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3F453101253CF48600E854A7 /* Threader.app */,
-				3F453118253CF4AB00E854A7 /* ThreaderShare.appex */,
+				3F453101253CF48600E854A7 /* ConversationSample.app */,
+				3F453118253CF4AB00E854A7 /* ConversationSampleShare.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3F453103253CF48600E854A7 /* Threader */ = {
+		3F453103253CF48600E854A7 /* ConversationSample */ = {
 			isa = PBXGroup;
 			children = (
-				3F453104253CF48600E854A7 /* ThreaderApp.swift */,
-				3F453106253CF48600E854A7 /* ContentView.swift */,
-				3F453108253CF48900E854A7 /* Assets.xcassets */,
+				3FE373722547CA2100BEA12E /* Tweet components */,
+				3F453104253CF48600E854A7 /* ConversationSampleApp.swift */,
 				3F45310D253CF48900E854A7 /* Info.plist */,
-				3F45310A253CF48900E854A7 /* Preview Content */,
+				3F29849D2543D77200AF13D1 /* MockData.swift */,
+				3F8BCF3E2543F63F00376EA9 /* ConversationView.swift */,
+				3F453108253CF48900E854A7 /* Assets.xcassets */,
 			);
-			path = Threader;
+			path = ConversationSample;
 			sourceTree = "<group>";
 		};
 		3F45310A253CF48900E854A7 /* Preview Content */ = {
@@ -121,10 +153,9 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		3F453119253CF4AB00E854A7 /* ThreaderShare */ = {
+		3F453119253CF4AB00E854A7 /* Share Extension */ = {
 			isa = PBXGroup;
 			children = (
-				3F370D77253F71E600D354FE /* template.html */,
 				3F370D76253F71E600D354FE /* Conversation.swift */,
 				3F45311A253CF4AB00E854A7 /* ShareViewController.swift */,
 				3F45311F253CF4AB00E854A7 /* Info.plist */,
@@ -134,15 +165,29 @@
 				3F6E61BD2541328D0080DA47 /* FileCache.swift */,
 				3F6E61C5254148A70080DA47 /* TwitterRequest.swift */,
 			);
-			path = ThreaderShare;
+			path = "Share Extension";
+			sourceTree = "<group>";
+		};
+		3FE373722547CA2100BEA12E /* Tweet components */ = {
+			isa = PBXGroup;
+			children = (
+				3FE373752547CAD600BEA12E /* TweetImage.swift */,
+				3FD2DC582548A20100F5E5E5 /* UserImage.swift */,
+				3FE3737F2547CCE600BEA12E /* TweetImages.swift */,
+				3FE373842547E18500BEA12E /* TweetPollOption.swift */,
+				3FE3738F2547ED0E00BEA12E /* TweetPoll.swift */,
+				3F8BCF462544F4A000376EA9 /* TweetEmbed.swift */,
+				3F2984A32543D91400AF13D1 /* ThreadHeader.swift */,
+			);
+			path = "Tweet components";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3F453100253CF48600E854A7 /* Threader */ = {
+		3F453100253CF48600E854A7 /* ConversationSample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3F453110253CF48900E854A7 /* Build configuration list for PBXNativeTarget "Threader" */;
+			buildConfigurationList = 3F453110253CF48900E854A7 /* Build configuration list for PBXNativeTarget "ConversationSample" */;
 			buildPhases = (
 				3F4530FD253CF48600E854A7 /* Sources */,
 				3F4530FE253CF48600E854A7 /* Frameworks */,
@@ -154,14 +199,16 @@
 			dependencies = (
 				3F453121253CF4AB00E854A7 /* PBXTargetDependency */,
 			);
-			name = Threader;
+			name = ConversationSample;
+			packageProductDependencies = (
+			);
 			productName = Threader;
-			productReference = 3F453101253CF48600E854A7 /* Threader.app */;
+			productReference = 3F453101253CF48600E854A7 /* ConversationSample.app */;
 			productType = "com.apple.product-type.application";
 		};
-		3F453117253CF4AB00E854A7 /* ThreaderShare */ = {
+		3F453117253CF4AB00E854A7 /* ConversationSampleShare */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3F453123253CF4AB00E854A7 /* Build configuration list for PBXNativeTarget "ThreaderShare" */;
+			buildConfigurationList = 3F453123253CF4AB00E854A7 /* Build configuration list for PBXNativeTarget "ConversationSampleShare" */;
 			buildPhases = (
 				3F453114253CF4AB00E854A7 /* Sources */,
 				3F453115253CF4AB00E854A7 /* Frameworks */,
@@ -171,9 +218,9 @@
 			);
 			dependencies = (
 			);
-			name = ThreaderShare;
+			name = ConversationSampleShare;
 			productName = ThreaderShare;
-			productReference = 3F453118253CF4AB00E854A7 /* ThreaderShare.appex */;
+			productReference = 3F453118253CF4AB00E854A7 /* ConversationSampleShare.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -193,7 +240,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3F4530FC253CF48600E854A7 /* Build configuration list for PBXProject "Threader" */;
+			buildConfigurationList = 3F4530FC253CF48600E854A7 /* Build configuration list for PBXProject "ConversationSample" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -202,12 +249,14 @@
 				Base,
 			);
 			mainGroup = 3F4530F8253CF48600E854A7;
+			packageReferences = (
+			);
 			productRefGroup = 3F453102253CF48600E854A7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3F453100253CF48600E854A7 /* Threader */,
-				3F453117253CF4AB00E854A7 /* ThreaderShare */,
+				3F453100253CF48600E854A7 /* ConversationSample */,
+				3F453117253CF4AB00E854A7 /* ConversationSampleShare */,
 			);
 		};
 /* End PBXProject section */
@@ -219,6 +268,7 @@
 			files = (
 				3F45310C253CF48900E854A7 /* Preview Assets.xcassets in Resources */,
 				3F453109253CF48900E854A7 /* Assets.xcassets in Resources */,
+				3F2984912543AE5C00AF13D1 /* TwitterSettings.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,7 +276,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F370D79253F71E600D354FE /* template.html in Resources */,
 				3F45313C253E761300E854A7 /* TwitterSettings.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -238,8 +287,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F453107253CF48600E854A7 /* ContentView.swift in Sources */,
-				3F453105253CF48600E854A7 /* ThreaderApp.swift in Sources */,
+				3F2984942543AE6A00AF13D1 /* Conversation.swift in Sources */,
+				3FE373802547CCE600BEA12E /* TweetImages.swift in Sources */,
+				3FE373762547CAD600BEA12E /* TweetImage.swift in Sources */,
+				3F2984852543AE4A00AF13D1 /* Models+Extension.swift in Sources */,
+				3F8BCF3F2543F63F00376EA9 /* ConversationView.swift in Sources */,
+				3F29847F2543AE0500AF13D1 /* ShareViewController.swift in Sources */,
+				3F29848B2543AE4F00AF13D1 /* TwitterRequest.swift in Sources */,
+				3F8BCF472544F4A000376EA9 /* TweetEmbed.swift in Sources */,
+				3F453105253CF48600E854A7 /* ConversationSampleApp.swift in Sources */,
+				3FE373902547ED0E00BEA12E /* TweetPoll.swift in Sources */,
+				3F2984882543AE4C00AF13D1 /* FileCache.swift in Sources */,
+				3F2984822543AE4700AF13D1 /* Models.swift in Sources */,
+				3FE373852547E18500BEA12E /* TweetPollOption.swift in Sources */,
+				3F2984A42543D91400AF13D1 /* ThreadHeader.swift in Sources */,
+				3FD2DC592548A20100F5E5E5 /* UserImage.swift in Sources */,
+				3F29849E2543D77200AF13D1 /* MockData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,10 +311,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F6E61C2254147860080DA47 /* Models+Extension.swift in Sources */,
+				3FE373772547CAD600BEA12E /* TweetImage.swift in Sources */,
 				3F370D78253F71E600D354FE /* Conversation.swift in Sources */,
+				3FE373912547ED0E00BEA12E /* TweetPoll.swift in Sources */,
+				3FD2DC552548902B00F5E5E5 /* ConversationView.swift in Sources */,
 				3F453140253E791200E854A7 /* Models.swift in Sources */,
+				3FD2DC5025488E7600F5E5E5 /* TweetEmbed.swift in Sources */,
 				3F6E61BE2541328D0080DA47 /* FileCache.swift in Sources */,
+				3FE3737C2547CBCA00BEA12E /* MockData.swift in Sources */,
 				3F45311B253CF4AB00E854A7 /* ShareViewController.swift in Sources */,
+				3FF916252548A61900BED7C3 /* ThreadHeader.swift in Sources */,
+				3FD2DC5A2548A20100F5E5E5 /* UserImage.swift in Sources */,
+				3FE373862547E18500BEA12E /* TweetPollOption.swift in Sources */,
+				3FE373812547CCE600BEA12E /* TweetImages.swift in Sources */,
 				3F6E61C6254148A70080DA47 /* TwitterRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,7 +333,7 @@
 /* Begin PBXTargetDependency section */
 		3F453121253CF4AB00E854A7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3F453117253CF4AB00E854A7 /* ThreaderShare */;
+			target = 3F453117253CF4AB00E854A7 /* ConversationSampleShare */;
 			targetProxy = 3F453120253CF4AB00E854A7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -390,16 +462,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Threader/Preview Content\"";
 				DEVELOPMENT_TEAM = THX3Z8FLEN;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = Threader/Info.plist;
+				INFOPLIST_FILE = ConversationSample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.iamdaniele.Threader;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iamdaniele.ConversationSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -413,16 +484,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Threader/Preview Content\"";
 				DEVELOPMENT_TEAM = THX3Z8FLEN;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = Threader/Info.plist;
+				INFOPLIST_FILE = ConversationSample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.iamdaniele.Threader;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iamdaniele.ConversationSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -434,14 +504,14 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = THX3Z8FLEN;
-				INFOPLIST_FILE = ThreaderShare/Info.plist;
+				INFOPLIST_FILE = "Share Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.iamdaniele.Threader.ThreaderShare;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iamdaniele.ConversationSample.ShareExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -454,14 +524,14 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = THX3Z8FLEN;
-				INFOPLIST_FILE = ThreaderShare/Info.plist;
+				INFOPLIST_FILE = "Share Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.iamdaniele.Threader.ThreaderShare;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iamdaniele.ConversationSample.ShareExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -472,7 +542,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3F4530FC253CF48600E854A7 /* Build configuration list for PBXProject "Threader" */ = {
+		3F4530FC253CF48600E854A7 /* Build configuration list for PBXProject "ConversationSample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3F45310E253CF48900E854A7 /* Debug */,
@@ -481,7 +551,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3F453110253CF48900E854A7 /* Build configuration list for PBXNativeTarget "Threader" */ = {
+		3F453110253CF48900E854A7 /* Build configuration list for PBXNativeTarget "ConversationSample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3F453111253CF48900E854A7 /* Debug */,
@@ -490,7 +560,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3F453123253CF4AB00E854A7 /* Build configuration list for PBXNativeTarget "ThreaderShare" */ = {
+		3F453123253CF4AB00E854A7 /* Build configuration list for PBXNativeTarget "ConversationSampleShare" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3F453124253CF4AB00E854A7 /* Debug */,

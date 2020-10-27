@@ -1,13 +1,17 @@
 //
 //  Models.swift
-//  ThreaderShare
+//  ConversationSampleShare
 //
 //  Created by Daniele Bernardi on 10/19/20.
 //
 
 import Foundation
 
-struct TweetLookupResponse : Codable {
+struct TweetLookupResponse : Codable, Identifiable {
+  var id: UUID {
+    return UUID()
+  }
+    
   struct Meta : Codable {
     var resultCount: Int
     var newestId: String
@@ -41,7 +45,7 @@ struct Attachments : Codable {
   var pollIds: [String]?
 }
 
-struct Media: Codable {
+struct Media: Codable, Hashable {
   enum MediaType : String, Codable {
     case photo, video, animatedGif = "animated_gif"
   }

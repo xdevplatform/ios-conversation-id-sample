@@ -1,6 +1,6 @@
 //
 //  Models+Extension.swift
-//  ThreaderShare
+//  ConversationSampleShare
 //
 //  Created by Daniele Bernardi on 10/21/20.
 //
@@ -47,5 +47,39 @@ extension TweetLookupResponse {
       return polls.filter { $0.id == pollId }.first
     }
     return nil
+  }  
+}
+
+extension Poll {
+  var totalVotes: Int {
+    options.reduce(0) { $0 + $1.votes }
+  }
+  
+  func option(position: Int) -> PollOption? {
+    options.first { $0.position == position }
+  }
+  
+  func percentValue(position: Int) -> Float {
+    guard let poll = option(position: position),
+          totalVotes > 0 else {
+      return 0.0
+    }
+    
+    return Float(poll.votes) / Float(totalVotes)
+  }
+  
+  func percentLabel(position: Int) -> String {
+    let formatter = NumberFormatter()
+    formatter.numberStyle = .percent
+    formatter.minimumFractionDigits = 0
+    formatter.maximumFractionDigits = 1
+    return formatter.string(from: NSNumber(value: percentValue(position: position)))!
+  }
+  
+  func isLeading(position: Int) -> Bool {
+    let max = options
+      .sorted { a, b in a.votes < b.votes }
+      .max { a, b in a.votes < b.votes }!
+    return max.position == position
   }
 }
