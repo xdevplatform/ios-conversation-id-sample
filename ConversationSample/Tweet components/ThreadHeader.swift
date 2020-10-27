@@ -37,10 +37,7 @@ extension ThreadHeader {
 
 struct ThreadRow_Previews: PreviewProvider {
   static var previews: some View {
-    Group {
-      ThreadHeader(thread: mockThreads[0])
-      ThreadHeader(thread: mockThreads[1])
-    }.previewLayout(.fixed(width: 400, height: 86))
-    
+    ThreadHeader(thread: MockData.searchResponse)
+      .previewLayout(.fixed(width: 400, height: 86))    
   }
 }
